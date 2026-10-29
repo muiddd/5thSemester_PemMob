@@ -59,6 +59,7 @@ flutter:
 
   assets:
     - lib/assets/images/logo_kemdikbud.png
+    - lib/assets/images/login_icon.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mydj/components/password_field.dart';
 
 class AkunPage extends StatefulWidget {
   const AkunPage({super.key, required this.title});
@@ -14,19 +15,91 @@ class _AkunPageState extends State<AkunPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('Halaman Akun'),
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-      ),
+        body: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Ganti Sandi',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Divider(thickness: 2),
+
+                  SizedBox(height: 10),
+                  Text('Sandi Saat Ini'),
+                  SizedBox(height: 10),
+                  PasswordField(),
+                  SizedBox(height: 10),
+                  Text('Sandi Baru'),
+                  SizedBox(height: 10),
+                  PasswordField(),
+                  SizedBox(height: 10),
+                  Text('Konfirmasi Sandi Saat'),
+                  SizedBox(height: 10),
+                  PasswordField(),
+                  SizedBox(height: 20),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        //
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF6750A4),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                      ),
+                      child: const Text(
+                        'Simpan',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 20),
+                  Text(
+                    'Keluar',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Divider(thickness: 2),
+                  SizedBox(height: 20),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        //
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF6750A4),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                      ),
+                      child: const Text(
+                        'Keluar dari Aplikasi',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                ]
+            )
+        )
     );
   }
 }
